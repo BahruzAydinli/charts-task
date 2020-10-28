@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnChanges, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component } from '@angular/core';
 import * as d3 from 'd3';
 import * as c3 from 'c3';
 
@@ -14,7 +14,7 @@ const data = [
   templateUrl: './table-charts.component.html',
   styleUrls: ['./table-charts.component.scss'],
 })
-export class TableChartsComponent implements AfterViewInit, OnChanges {
+export class TableChartsComponent implements AfterViewInit, AfterViewChecked {
   data: any[] = data;
 
   ellipses: any[] = [
@@ -107,10 +107,9 @@ export class TableChartsComponent implements AfterViewInit, OnChanges {
         '#chart4'
       )
     );
-    this.centerDonutTexts();
   }
 
-  ngOnChanges() {
+  ngAfterViewChecked(): void {
     this.centerDonutTexts();
   }
 
