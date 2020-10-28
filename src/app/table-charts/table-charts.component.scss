@@ -1,0 +1,84 @@
+::ng-deep.ngx-charts-outer {
+  transform: translateX(-20px) !important;
+}
+
+table {
+  min-width: 900px;
+  border-collapse: collapse;
+  thead {
+    td {
+      text-align: center;
+      border-bottom: 2px solid #224185;
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border-top: 2px solid #224185;
+      }
+      &:nth-child(2) {
+        td {
+          border-top: none !important;
+        }
+      }
+      td {
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+//third and fourth lines round-box
+.round-box {
+  width: 100px;
+  height: 100px;
+  background-color: #224185;
+  border-radius: 50%;
+  .round-box-center {
+    width: 65px;
+    height: 65px;
+    background-color: white;
+    border-radius: 50%;
+    p {
+      color: black;
+    }
+  }
+}
+
+//first-line ellips-box
+.ellips-box {
+  width: 80%;
+  margin: 0 auto;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+}
+
+table {
+  tr {
+    td {
+      width: 150px;
+    }
+    td:first-child {
+      width: 150px;
+    }
+  }
+}
+
+.legend-box {
+  .legend-color {
+    width: 10px;
+    height: 10px;
+    display: block;
+    margin: 6px 6px 0 0;
+    float: left;
+  }
+  .legend-text {
+    font-size: 15px;
+  }
+}
+
+.barsColumn {
+  border-left: 2px solid #224185;
+  border: none !important;
+}

@@ -1,0 +1,98 @@
+<div style="overflow-x: auto">
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <td>Tamamlanıb</td>
+        <td>Qismən tamamlanıb</td>
+        <td>İcra olunmayıb</td>
+        <td>Qiymətləndirilməyib</td>
+        <td>Cəmi</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="legend-box">
+            <span
+              class="legend-color"
+              [ngStyle]="{ backgroundColor: '#1F4385' }"
+            ></span
+            ><span class="legend-text text-main">Vaxtında</span>
+          </div>
+          <div class="legend-box">
+            <span
+              class="legend-color"
+              [ngStyle]="{ backgroundColor: '#5579AC' }"
+            ></span
+            ><span class="legend-text text-main">Gecikdirilib</span>
+          </div>
+          <div class="legend-box">
+            <span
+              class="legend-color"
+              [ngStyle]="{ backgroundColor: '#1AC9FF' }"
+            ></span
+            ><span class="legend-text text-main">Cari</span>
+          </div>
+        </td>
+        <td *ngFor="let ellips of ellipses">
+          <div
+            class="ellips-box center"
+            [ngStyle]="{ backgroundColor: ellips.bg, color: ellips.color }"
+          >
+            {{ ellips.count }}
+          </div>
+        </td>
+        <td rowspan="4" class="barsColumn">
+          <ngx-charts-bar-horizontal
+            [view]="view"
+            [scheme]="colorScheme"
+            [results]="data"
+            [showDataLabel]="true"
+            [barPadding]="80"
+          >
+          </ngx-charts-bar-horizontal>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="text-main">Son tarix ilə</span></td>
+        <td>
+          <div id="chart1" class="center w-100"></div>
+        </td>
+        <td>
+          <div id="chart2" class="center w-100"></div>
+        </td>
+        <td>
+          <div id="chart3" class="center w-100"></div>
+        </td>
+        <td>
+          <div id="chart4" class="center w-100"></div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="text-main">Son tarixsiz</span></td>
+        <td *ngFor="let item of withoutDeadline">
+          <div class="center w-100">
+            <div class="round-box center">
+              <span class="round-box-center center">
+                <p>{{ item }}</p>
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="text-main">Davamlı</span></td>
+        <td *ngFor="let item of continuous">
+          <div class="center w-100">
+            <div class="round-box center">
+              <span class="round-box-center center">
+                <p>{{ item }}</p>
+              </span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
